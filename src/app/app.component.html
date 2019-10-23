@@ -1,10 +1,12 @@
 <div class="container vh-100">
   <div class="m-5 d-flex flex-column align-items-center justify-content-between w-100">
-    <button class="btn btn-outline-primary">START</button>
+    <button class="btn btn-outline-primary" (click)="handleClick()">START</button>
     <div class="p-3 container-fluid d-flex flex-column justify-content-start">
       <label>Logs:</label>
       <div class="jumbotron justify-content-start">
-      {{output}}
+        <div *ngFor="let row of output" class="row">
+          <span [ngStyle]="{'color': row === 0 ? 'red' : 'black'}">{{row}}</span>
+        </div>
       </div>
     </div>
   </div>
